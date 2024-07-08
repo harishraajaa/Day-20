@@ -48,7 +48,6 @@ section.pricing {
   transition: all 0.2s;
 }
 
-/* Hover Effects on Card */
 
 @media (min-width: 992px) {
   .pricing .card:hover {

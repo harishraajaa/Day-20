@@ -1,68 +1,83 @@
 import React from 'react'
 import Card from './Card'
-
 function App() {
-  let data = [{
-    title: "FREE",
-    price: "$0",
-    user: "Single User",
-    storage: "5GB Storage",
-    domain: "Free Subdomain",
-    project: "text-muted",
-    projectIcon: "fas fa-times",
-    phone: "text-muted",
-    phoneIcon: "fas fa-times",
-    subDomain: "text-muted",
-    subDomainIcon: "fas fa-times",
-    monthly: "text-muted",
-    monthlyIcon: "fas fa-times"
-  },
-  {
-    title: "PLUS",
-    price: "$9",
-    user: "5 Users",
-    storage: "50GB Storage",
-    domain: "Free Subdomain",
-    project: "",
-    projectIcon: "fas fa-check",
-    phone: "",
-    phoneIcon: "fas fa-check",
-    subDomain: "",
-    subDomainIcon: "fas fa-check",
-    monthly: "text-muted",
-    monthlyIcon: "fas fa-times"
-  },
-  {
-    title: "PRO",
-    price: "$49",
-    user: "Unlimited Users",
-    storage: "150GB Storage",
-    domain: "Unlimited Free Subdomain",
-    project: "",
-    projectIcon: "fas fa-check",
-    phone: "",
-    phoneIcon: "fas fa-check",
-    subDomain: "",
-    subDomainIcon: "fas fa-check",
-    monthly: "",
-    monthlyIcon: "fas fa-check"
-  }];
 
-  return (
-    <div className="App">
-      <section className="pricing py-5 bg-primary">
-        <div className="container">
-          <div className="row">
-            {
-              data.map((e, i) => {
-                return <Card cardData={e} key={i} />
-              })
-            }
-          </div>
-        </div>
-      </section>
+  let mydata = [
+    {
+      plan:"FREE",
+      price:0,
+      user:"Single User",
+      isUser:true,
+      storage:"5GB Storage",
+      isStorage:true,
+      public:"Unlimited Public Projects",
+      isPublic:true,
+      community:"Community Access",
+      isCommunity:true,
+      private:"Unlimited Private Projects",
+      isPrivate:false,
+      support:"Dedicated Phone Support",
+      isSupport:false,
+      subDomain:"Free Subdomain",
+      isSubDomain:false,
+      reports:"Monthly Status Reports",
+      isReports:false
+    },
+    {
+      plan:"PLUS",
+      price:9,
+      user:"5 Users",
+      isUser:true,
+      storage:"50GB Storage",
+      isStorage:true,
+      public:"Unlimited Public Projects",
+      isPublic:true,
+      community:"Community Access",
+      isCommunity:true,
+      private:"Unlimited Private Projects",
+      isPrivate:true,
+      support:"Dedicated Phone Support",
+      isSupport:true,
+      subDomain:"Free Subdomain",
+      isSubDomain:true,
+      reports:"Monthly Status Reports",
+      isReports:false
+    },
+    {
+      plan:"PRO",
+      price:49,
+      user:"Unlimited Users",
+      isUser:true,
+      storage:"150GB Storage",
+      isStorage:true,
+      public:"Unlimited Public Projects",
+      isPublic:true,
+      community:"Community Access",
+      isCommunity:true,
+      private:"Unlimited Private Projects",
+      isPrivate:true,
+      support:"Dedicated Phone Support",
+      isSupport:true,
+      subDomain:"Free Subdomains",
+      isSubDomain:true,
+      reports:"Monthly Status Reports",
+      isReports:true
+    }
+  ]
+
+  return <>
+  <section class="pricing py-5">
+  <div class="container">
+    <div class="row">
+      {
+        mydata.map((e)=>{
+          return <Card data={e}/>
+        })
+      }
     </div>
-  );
+  </div>
+</section>
+  </>
 }
 
-export default App;
+export default App
